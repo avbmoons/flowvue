@@ -1,0 +1,13 @@
+{
+    "amount": 32.7,
+    "countGoods": 1,
+    "contents": [
+      {
+        "id":2,
+        "title":"Pleasant Surprise",
+        "price":32.7,
+        "image": "../../public/catalog/item-2.png",
+        "quantity": "1"
+      }
+    ]
+  }
