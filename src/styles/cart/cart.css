@@ -1,0 +1,14 @@
+.page {
+  width: 90vw;
+  min-height: 70vh;
+  border: 1px solid gray;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.page .cart-page {
+  width: 90%;
+  height: auto;
+  position: static;
+}/*# sourceMappingURL=cart.css.map */

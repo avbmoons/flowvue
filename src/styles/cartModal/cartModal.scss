@@ -1,0 +1,36 @@
+.modal {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 300px);
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  overflow: auto;
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  .products-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .cart-total {
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    // position: fixed;
+    // bottom: 0;
+    // right: 0;
+    // background-color: yellowgreen;
+    .total-info {
+      font-size: 18px;
+      font-weight: 500;
+      color: blue;
+    }
+  }
+}

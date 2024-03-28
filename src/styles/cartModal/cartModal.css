@@ -1,0 +1,32 @@
+.modal {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 300px);
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  overflow: auto;
+}
+.modal .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.modal .products-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.modal .cart-total {
+  display: flex;
+  justify-content: center;
+  border: 1px solid gray;
+}
+.modal .cart-total .total-info {
+  font-size: 18px;
+  font-weight: 500;
+  color: blue;
+}/*# sourceMappingURL=cartModal.css.map */

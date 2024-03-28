@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "title":"Smile for Me",
+        "price":32,
+        "image": "../../public/catalog/item-1.png"
+    },
+    {
+        "id":2,
+        "title":"Pleasant Surprise",
+        "price":32.7,
+        "image": "../../public/catalog/item-2.png"
+    },
+    {
+        "id":3,
+        "title":"Red & White Roses",
+        "price":40,
+        "image": "../../public/catalog/item-3.png"
+    },
+    {
+        "id":4,
+        "title":"Red Elegance",
+        "price":42,
+        "image": "../../public/catalog/item-4.png"
+    },
+    {
+        "id":5,
+        "title":"Have a Wonderful Journey",
+        "price":45,
+        "image": "../../public/catalog/item-5.png"
+    }
+]
