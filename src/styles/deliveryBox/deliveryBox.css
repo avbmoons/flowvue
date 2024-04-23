@@ -1,0 +1,49 @@
+.delivery-box {
+  margin: 0 auto;
+  width: 90%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 1023px) {
+  .delivery-box {
+    height: auto;
+  }
+}
+.delivery-box__heading {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.delivery-box__heading .heading-prime {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #2c817a;
+  text-align: center;
+}
+.delivery-box__order {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.delivery-box__order .delivery-input {
+  height: 4.8vh;
+}
+.delivery-box__order .delivery-input::-moz-placeholder {
+  padding-left: 10px;
+  color: #c1e1df;
+}
+.delivery-box__order .delivery-input::placeholder {
+  padding-left: 10px;
+  color: #c1e1df;
+}
+.delivery-box__order .delivery-address {
+  width: 40%;
+}/*# sourceMappingURL=deliveryBox.css.map */

@@ -1,16 +1,23 @@
 <template>
-    <div class="product-card" >
-         <h2>{{ title }}</h2>
-        <p>{{ price }} &euro;</p>
-        <img :src="imageUrl" alt="photo">
-        <button class="toCart" v-on:click="onClick">Add to cart</button>
+    <div class="product" data-id="11">
+        <div class="product-image" data-id="11">
+          <img :src="imageUrl" alt="photo">
+        </div>
+        <div class="product-info" data-id="11">
+          <a class="product-title" href="#">{{ title }}</a>
+          <div class="product-price-box">
+            <p class="price-text">from</p>
+            <p class="price-value">{{ price }}</p>
+            <p class="price-currency">&euro;</p>
+          </div>
+        </div>
+        <div class="product-button" data-id="11">
+          <button class="to-cart" type="button" v-on:click="onClick">Add to cart</button>
+        </div>
+        <!-- <button class="product-button" type="button" data-id="11" v-on:click="onClick">Add to cart</button>
+        <div class="product-button" data-id="11"> 
+    </div>--> 
     </div>
-    <!-- <div class="product-card" v-on:click="onClick">
-         <h2>{{ title }}</h2>
-        <p>{{ price }} &euro;</p>
-        <img :src="imageUrl" alt="photo">
-        <button class="toCart" v-on:click="onClick">Add to cart</button>
-    </div> -->
 </template>
 
 <script>
@@ -22,7 +29,10 @@ export default  {
     props: {
     title: String,
     price: Number,
-    image: String
+    image: String,
+    isPopular: Boolean,
+    isNew: Boolean,
+    isPromo: Boolean
   },
   // data(){
   //   return{
@@ -43,11 +53,5 @@ export default  {
 </script>
 
 <style scoped lang="scss">
-@import '../styles/productCard/productCard.scss'
-// .product-card{
-//   margin: 10px;
-//   width: 100px;
-//   height: 150px;
-//   border: 1px solid green;
-// }
+@import '../styles/productCard/productCard.scss';
 </style>

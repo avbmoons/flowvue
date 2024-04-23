@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+@import '../vars/vars.scss';
+
+.delivery-box {
+  margin: 0 auto;
+  width: $block-width;
+  height: 20%;
+  @include flex-vertical();
+  @media only screen and (max-width: 1023px) {
+    height: auto;
+  }
+  &__heading {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    .heading-prime {
+      padding: 10px;
+      @include text-font(20px, 600, 20px, 0%);
+      color: $color-down;
+      text-align: center;
+    }
+  }
+  &__order {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    @include flex-horizontal();
+    .delivery-input {
+      height: $header-bottom-height * 0.8;
+    }
+    .delivery-input::placeholder {
+      padding-left: 10px;
+      color: $color-down-light;
+    }
+    .delivery-address {
+      width: 40%;
+    }
+  }
+}

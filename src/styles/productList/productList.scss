@@ -1,10 +1,78 @@
-.products-list {
-  width: 90vw;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  overflow: auto;
-  border: 1px solid red;
-  background-color: #ccc;
+@use 'sass:math';
+
+@import '../vars/vars.scss';
+
+.catalog {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: $block-width; // 100%;
+  min-height: $block-min-height; // $slide-height;
+  @include flex-vertical();
+  justify-content: flex-start;
+  //border: 2px solid red;
+  &__heading {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+    height: fit-content;
+    //border: 1px solid red;
+    @include flex-horizontal();
+    justify-content: space-between;
+    .heading-prime {
+      padding: 10px;
+      @include text-font(20px, 600, 20px, 0%);
+      color: $color-down;
+      //border: 2px solid blue;
+    }
+    .filters {
+      margin: auto 0;
+      width: fit-content;
+      height: fit-content;
+      @include flex-horizontal();
+      justify-content: flex-end;
+      //border: 1px solid red;
+      .filter-button {
+        margin: auto;
+        height: 100%;
+        background: none;
+        border: 1px solid white;
+        outline: none;
+        @include flex-vertical();
+        cursor: pointer;
+        img {
+          margin: auto;
+          width: auto;
+          height: fit-content;
+          padding: 5px;
+          //border: 1px solid red;
+        }
+      }
+      .filter-button:focus {
+        border: 1px solid $color-font;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__block {
+    margin: auto 0;
+    width: 100%;
+    //height: auto;
+    min-height: 80%;
+    @include flex-horizontal();
+    justify-content: flex-start; // space-between;
+    //align-items: flex-start;
+    flex-wrap: wrap;
+    //border: 2px solid orange;
+  }
 }
+
+// .products-list {
+//   width: 90vw;
+//   height: auto;
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   overflow: auto;
+//   border: 1px solid red;
+//   background-color: #ccc;
+// }

@@ -1,27 +1,27 @@
 <template>
-    <div class="products-list">
-    <!-- <ProductCard 
-      v-for="product of list" 
-      v-bind:key="product.id_product"
-      v-bind:title="product.product_name"
-      v-bind:price="product.price"
-      v-on:add="onAdd(product)"
-    ></ProductCard> -->
-     <ProductCard 
-      v-for="product of list" 
-      v-bind:key="product.id"
-      v-bind:title="product.title"
-      v-bind:price="product.price"
-      v-bind:image="product.image"
-      v-on:add="onAdd(product)"
-    ></ProductCard> 
-    <!--<ProductCard 
-      v-for="product of list" 
-      v-bind:key="product.id"
-      v-bind:title="product.name"
-      v-bind:price="product.priceActive"
-      v-on:add="onAdd(product)"
-    ></ProductCard>-->
+    <div class="catalog">
+      <div class="catalog__heading">
+        <p class="heading-prime">Catalog</p>
+        <div class="filters">
+          <button class="filter-button" id="filterButton" type="button">
+            <img src="../assets/icons/filter24.png" alt="filter" />
+          </button>
+          <button class="filter-button" id="sortButton" type="button">
+            <img src="../assets/icons/sort24.png" alt="sort" />
+          </button>
+        </div>
+      </div>
+      <div class="catalog__block">
+        <ProductCard 
+          v-for="product of list" 
+          v-bind:key="product.id"
+          v-bind:title="product.title"
+          v-bind:price="product.price"
+          v-bind:image="product.image"
+          v-on:add="onAdd(product)"
+        ></ProductCard>        
+      </div>
+ 
   </div>
 </template>
 

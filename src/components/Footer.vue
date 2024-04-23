@@ -1,8 +1,10 @@
 <template>
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/catalog">Catalog</router-link> |
       <router-link to="/cart">Cart</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/terms">Delivery&Payment</router-link> |      
+      <router-link to="/about">About us</router-link>
     </div>
 </template>
 

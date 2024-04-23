@@ -1,0 +1,68 @@
+@use 'sass:math';
+
+@import '../vars/vars.scss';
+
+.search-box {
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //border: 2px solid red;
+
+  .search-input-box {
+    margin: 0 auto;
+    //margin-left: 2%;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: 1023px) {
+      width: 80%;
+    }
+    @include flex-horizontal();
+    //display: none;
+    //border: 1px solid red;
+    .search-input {
+      padding-left: 10px;
+      width: 90%;
+      height: 100%;
+      @media only screen and (max-width: 1023px) {
+        width: 80%;
+      }
+      border: none; // 1px solid $color-prime-dark;
+      outline: $color-down-dark;
+      @include text-font(14px, 400, 14px, 0%);
+      color: $color-font;
+    }
+    .search-input::placeholder {
+      @include text-font(14px, 400, 14px, 0%);
+      color: $color-down-light;
+    }
+    .search-button {
+      width: 5%;
+      height: 100%;
+      @media only screen and (max-width: 1023px) {
+        width: 10%;
+      }
+      border: none;
+      outline: none;
+      background-color: $color-prime-dark;
+      @include text-font(16px, 400, 16px, 0%);
+      color: white;
+    }
+    .search-close {
+      width: 5%;
+      height: 100%;
+      @media only screen and (max-width: 1023px) {
+        width: 10%;
+      }
+      border: none;
+      outline: none;
+      background-color: $color-prime-dark;
+      @include text-font(16px, 400, 16px, 0%);
+      color: $color-accent;
+    }
+  }
+}

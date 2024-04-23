@@ -2,11 +2,18 @@
   <div class="header">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/catalog">Catalog</router-link> |
       <router-link to="/cart">Cart</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/terms">Delivery&Payment</router-link> |      
+      <router-link to="/about">About us</router-link>
+
     </div>
     <div class="services">
-      <Search></Search>
+      <Search
+      v-bind:isVisibleSearch="isVisibleSearch"
+      v-on:closeSearch="onToggleSearch"
+      v-if="isVisibleSearch"></Search>
+      <button class="show-search" type="button" v-on:click="onToggleSearch">Поиск</button>
       <button class="cart-button" type="button" v-on:click="onToggleCart">Корзина</button>      
     </div>
 
@@ -31,13 +38,17 @@ export default {
     },
     data() {
     return{
-    isVisibleCart: false      
+    isVisibleCart: false,
+    isVisibleSearch: false      
     }
 
   },
   methods: {
     onToggleCart() {
       this.isVisibleCart = !this.isVisibleCart
+    },
+    onToggleSearch(){
+      this.isVisibleSearch=!this.isVisibleSearch
     }
   },
   mounted() {

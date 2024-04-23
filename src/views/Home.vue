@@ -1,9 +1,8 @@
 <template>
   <div class="page">
-    <h1 class="page-title">Home page</h1>
-    <div class="search-block">
-      <!-- <Search></Search> -->
-      <!-- <button class="cart-button" type="button" v-on:click="onToggleCart">Корзина</button> -->
+    <!-- <h1 class="page-title">Home page</h1> -->
+    <div class="hero">
+      <DeliveryBox></DeliveryBox>
     </div>
     <ProductsList></ProductsList>
     <Cart 
@@ -18,6 +17,7 @@
 //import Search from '../components/Search.vue';
 import ProductsList from '../components/ProductsList.vue';
 import Cart from '../components/Cart.vue';
+import DeliveryBox from '../components/DeliveryBox.vue';
 // @ is an alias to /src
 export default {
   name:'Home',
@@ -25,6 +25,7 @@ export default {
     // Search,
     ProductsList,
     Cart,
+    DeliveryBox,
   },
   data() {
     return{

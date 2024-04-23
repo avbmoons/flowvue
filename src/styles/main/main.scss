@@ -1,0 +1,91 @@
+@use 'sass:math';
+
+// @import '../header/header.scss';
+// @import '../footer/footer.scss';
+@import '../vars/vars.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  //font-family: RobotoMono;
+  font-family: Montserrat;
+  color: $color-font;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  height: auto;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    @include flex-vertical();
+    justify-content: space-between;
+    flex-grow: 1;
+    // .header {
+    //   @include header();
+    // }
+    .main {
+      margin: 0 auto;
+      width: 100%;
+      min-height: $main-min-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      .hero {
+        margin: 0 auto;
+        width: 100%;
+        max-height: $slide-height;
+        @include flex-vertical();
+        justify-content: flex-start;
+        //border: 2px solid red;
+        .delivery-box {
+          margin: 0 auto;
+          width: $block-width;
+          @include flex-vertical();
+          //border: 1px solid red;
+          &__heading {
+            margin: 0 auto;
+            margin-bottom: 10px;
+            .heading-prime {
+              padding: 10px;
+              @include text-font(20px, 600, 20px, 0%);
+              color: $color-down;
+              text-align: center;
+            }
+          }
+          &__order {
+            margin: 0 auto;
+            width: 100%;
+            @include flex-horizontal();
+            .delivery-input {
+              height: $header-bottom-height * 0.8;
+            }
+            .delivery-input::placeholder {
+              padding-left: 10px;
+              color: $color-down-light;
+            }
+            .delivery-address {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // .footer {
+  //   @include footer();
+  // }
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
