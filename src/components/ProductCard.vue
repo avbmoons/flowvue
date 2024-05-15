@@ -32,7 +32,8 @@ export default  {
     image: String,
     isPopular: Boolean,
     isNew: Boolean,
-    isPromo: Boolean
+    isPromo: Boolean,
+    quantity: Number
   },
   // data(){
   //   return{

@@ -1,8 +1,12 @@
 <template>
-  <div class="modal">
-    <span class="close" v-on:click="onClose">x</span>
+  <div class="modal" id="modal-block">
+    <span class="close" v-on:click="onClose">&#10006;</span>
+    <!-- <a class="close-block" href="#close-block">CLOSE</a> -->
 
     <div class="products-list">
+      <div class="product-list__heading">
+        <p class="heading-prime">Your shopping list</p>
+      </div>
       <!-- <CartItem
       v-for="product of cart" 
       v-bind:key="product.id_product" 
@@ -14,14 +18,23 @@
       v-bind:key="product.id" 
       v-bind:product="product" 
       v-on:remove="onRemove"
-      v-on:decrement="decrement"
-      v-on:increment="increment"
+      v-on:decrement="decrement(product)"
+      v-on:increment="increment(product)"
       ></CartItem>      
     </div>
-    <div class="cart-total">
+    <!-- <div class="cart-total">
       <p class="total-info">Total:</p>
       <p class="total-info">{{ cartTotalCost }}</p>
-    </div>
+    </div> -->
+
+    <section class="cart-total">
+      <div class="cart-total__block">
+        <p class="grandtotal-text">Cart total:</p>
+        <p class="grandtotal-value">{{ cartTotalCost }}</p>
+        <p class="grandtotal-currency">&euro;</p>
+      </div>
+      <button class="total-button" type="button">Get order</button>
+    </section>
     
   </div>
 </template>
@@ -46,10 +59,10 @@ export default {
         for(let item of this.cart){
           result.push(item.price * item.quantity);
         }
-        result=result.reduce(function(sum, el) {
-          return sum+el;
+        result= result.reduce(function(sum, el) {
+          return sum+el; // sum+el;
         });
-        return result;
+        return parseFloat(result.toFixed(2));  // result;
         } else {
           return 0
         }
@@ -64,11 +77,11 @@ export default {
       this.$emit('remove', product)
     },
 
-    increment(index){
-      this.$emit('incrementCartItem',product.quantity)
+    decrement(product){
+      this.$store.dispatch('decrementCartItem',product)
     },
-    decrement(index){
-      this.$emit('decrementCartItem',product.quantity)
+    increment(product){
+      this.$store.dispatch('incrementCartItem',product)
     }
   }
 }

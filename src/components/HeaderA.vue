@@ -55,6 +55,7 @@
               >
                 <img src="../assets/icons/cart24.png" alt="cart" />
               </button>
+              <!-- <a class="btn-modal" href="#modal-block"><img src="../assets/icons/cart24.png" alt="cart" /></a> -->
             </div>
           </div>
         </div>

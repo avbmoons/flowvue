@@ -1,32 +1,54 @@
-.modal {
-  width: 600px;
-  height: 400px;
+#modal-block {
+  width: 50vw;
+  height: 100vh;
   position: fixed;
-  top: 20vh;
-  right: 0;
+  top: 0;
+  right: -100vw;
   border: 1px solid #ccc;
   background-color: white;
   border-radius: 4px;
   overflow: auto;
+  transition: all 0.5s ease-in;
+  z-index: 9;
 }
-.modal .close {
+#modal-block .close-block {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  background-color: aquamarine;
+  color: chocolate;
+  text-decoration: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+#modal-block .close {
   position: absolute;
   top: 5px;
   right: 5px;
   cursor: pointer;
 }
-.modal .products-list {
+#modal-block .products-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.modal .cart-total {
+#modal-block .cart-total {
   display: flex;
   justify-content: center;
   border: 1px solid gray;
 }
-.modal .cart-total .total-info {
+#modal-block .cart-total .total-info {
   font-size: 18px;
   font-weight: 500;
   color: blue;
+}
+
+.modal:target {
+  right: 0;
+}
+
+#modal-block:target {
+  right: 0;
 }/*# sourceMappingURL=cartModal.css.map */

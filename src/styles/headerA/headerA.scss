@@ -160,6 +160,7 @@ body {
             outline: none;
             @include flex-vertical();
             cursor: pointer;
+            transition: all 0.8s ease;
             img {
               margin: auto;
               width: auto;
@@ -171,6 +172,18 @@ body {
             border: 1px solid $color-prime;
             border-radius: 5px;
             box-sizing: border-box;
+          }
+          .btn-modal {
+            width: 50px;
+            padding: 5px;
+            color: black;
+            text-decoration: none;
+            background-color: aqua;
+            cursor: pointer;
+            transition: all 0.5s ease;
+          }
+          .btn-modal:hover {
+            background-color: blueviolet;
           }
         }
       }

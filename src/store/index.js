@@ -38,6 +38,22 @@ export default new Vuex.Store({
       if (state.cart.length) {
         let isProductExists = false;
         state.cart.map(function (item) {
+          // console.log(
+          //   'item.quantity=' +
+          //     item.quantity +
+          //     '  item.title=' +
+          //     item.title +
+          //     '  item.id=' +
+          //     item.id
+          // );
+          // console.log(
+          //   'payload.quantity=' +
+          //     payload.quantity +
+          //     '  payload.title=' +
+          //     payload.title +
+          //     '  payload.id=' +
+          //     payload.id
+          // );
           if (item.title === payload.title) {
             isProductExists = true;
             item.quantity++;
@@ -49,6 +65,7 @@ export default new Vuex.Store({
       } else {
         state.cart.push(payload);
       }
+      console.log(state.cart);
     },
 
     remove: (state, payload) => {
@@ -56,6 +73,7 @@ export default new Vuex.Store({
         // (item) => item.id_product === payload.id_product
         (item) => item.id === payload.id
       );
+      //console.log('payload.index = ' + index);
       state.cart.splice(index, 1);
     },
     filter: (state, payload) => {
@@ -63,12 +81,25 @@ export default new Vuex.Store({
     },
 
     increment: (state, payload) => {
-      console.log(state.cart[payload].quantity);
-      state.cart[payload].quantity++;
+      // console.log('product = ' + payload.title);
+      // console.log('product.quantity = ' + payload.quantity);
+
+      const index = state.cart.findIndex((item) => item.id === payload.id);
+
+      //console.log('index = ' + index);
+
+      state.cart[index].quantity++;
+      // console.log(
+      //   'payload.title = ' +
+      //     payload.title +
+      //     '  payload.quantity = ' +
+      //     payload.quantity
+      // );
     },
     decrement: (state, payload) => {
-      if (state.cart[payload].quantity > 1) {
-        state.cart[payload].quantity--;
+      const index = state.cart.findIndex((item) => item.id === payload.id);
+      if (state.cart[index].quantity > 1) {
+        state.cart[index].quantity--;
       }
     },
   },
